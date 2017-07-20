@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    @*
+            <h1>ASP.NET</h1>
+        <p class="lead">
+    *@
+    <h1>Welcome</h1>
+    <p class="lead">
+        <ul style="list-style:none;">
+
+            <li>@Html.ActionLink("All Certs Info", "Index", "CertView")</li>
+            <li>@Html.ActionLink("Certificates", "Index", "Certs")</li>
+            <li>@Html.ActionLink("Certificates Rows", "Index", "CertRows")</li>
+        </ul>
+     </p> 
+
+</div>

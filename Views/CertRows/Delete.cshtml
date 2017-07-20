@@ -1,0 +1,104 @@
+﻿@model CertApp.Models.CertRow
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CertRow</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cert.CertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cert.CertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomsEntryNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomsEntryNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HTSCodeDescript)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HTSCodeDescript)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Results)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Results)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FDAStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FDAStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitOfMeasure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOfPackages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOfPackages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectionLotIdNos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectionLotIdNos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CBPContainerLotID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CBPContainerLotID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

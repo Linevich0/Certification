@@ -1,0 +1,218 @@
+﻿@model CertApp.Models.Cert
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cert</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupersededCertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupersededCertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousCertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviousCertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantAddr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantAddr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantAddr2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantAddr2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantFax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantFax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AMSInspectorOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AMSInspectorOffice)
+        </dd>
+
+        @* add displaying all CertRows*@
+
+        <table class="table">
+            <tr>
+                <th>
+                    CertID
+                </th>
+                <th>
+                    CustomsEntryNum
+                </th>
+                <th>
+                    @* @Html.DisplayNameFor(model => model.Title) *@
+                    HTSCodeDescript
+                </th>
+                <th>
+                    TotalWeight
+                    @* @Html.DisplayNameFor(model => model.Credits)*@
+                </th>
+                <th>
+                    
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.CertRows)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CertID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomsEntryNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HTSCodeDescript)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalWeight)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CertID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.CertID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CertID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

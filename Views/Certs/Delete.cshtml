@@ -1,0 +1,176 @@
+﻿@model CertApp.Models.Cert
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cert</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupersededCertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupersededCertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousCertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviousCertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantAddr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantAddr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantAddr2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantAddr2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantFax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantFax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AMSInspectorOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AMSInspectorOffice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

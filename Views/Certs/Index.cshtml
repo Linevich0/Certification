@@ -1,0 +1,200 @@
+﻿@model IEnumerable<CertApp.Models.Cert>
+
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/jquery-ui.css")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
+
+@{
+    ViewBag.Title = "Cert";
+}
+
+<h2>Cert</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="col-xs-10">
+        @Html.ActionLink("Create New", "Create")
+    </div>
+
+        @*
+            <p>
+                Appicant Name  @Html.RadioButton("searchColumn", "ApplicantName")
+                Inspection Date @Html.RadioButton("searchColumn", "InspectionDate")
+                ApplicantEmail @Html.RadioButton("searchColumn", "ApplicantEmail")
+            </p>
+
+
+        *@
+        <div class="col-xs-4">
+            @Html.DropDownList("searchColumn", new List<SelectListItem>
+    {
+        new SelectListItem { Text = "ApplicantName", Value = "ApplicantName" },
+        new SelectListItem { Text = "InspectionDate",  Value = "InspectionDate" },
+        new SelectListItem { Text = "ApplicantEmail",  Value = "ApplicantEmail" },
+    }, new { @class = "form-control" })
+        </div>
+
+        <div class="col-xs-4">
+
+            @Html.TextBox("searchString", null, new { @class = "form-control" })
+        </div>
+        <div class="col-xs-4">
+            <input type="submit" value="Search" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" />
+        </div>
+
+        }
+
+
+    <table class="table" style="margin-top: 7%">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CertNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupersededCertNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviousCertNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InspectionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicantContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicantAddr)
+            </th>
+            @*
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicantAddr2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicantCity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicantState)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicantZip)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicantPhone)
+                </th>
+            *@
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicantEmail)
+            </th>
+            @*
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicantFax)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SourceFile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Created)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastUpdate)
+                </th>
+            *@
+            <th>
+                @Html.DisplayNameFor(model => model.InspectorName)
+            </th>
+            @*
+                <th>
+                    @Html.DisplayNameFor(model => model.AMSInspectorOffice)
+                </th>
+            *@
+            <th></th>
+        </tr>
+        
+        
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CertNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SupersededCertNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PreviousCertNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InspectionDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantContact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantAddr)
+                    </td>
+                    @*
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantAddr2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantCity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantState)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantZip)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantPhone)
+                    </td>
+                    *@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantEmail)
+                    </td>
+                    @*
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantFax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SourceFile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Created)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastUpdate)
+                    </td>
+                    *@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InspectorName)
+                    </td>
+                    @*
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AMSInspectorOffice)
+                    </td>
+                    *@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>                                  
+                    }                
+</table>
+
+<script type="text/jscript">
+    /*
+    $('#search').click(function() {
+        $("#partialView").load("/Views/Certs/PartialViewExample");
+    });
+    */
+    $(function () { $("#rowAccordion").accordion(); });
+
+</script>  

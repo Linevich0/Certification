@@ -1,0 +1,87 @@
+﻿@model IEnumerable<CertApp.Models.CertRow>
+
+@{
+    ViewBag.Title = "Cert Rows";
+}
+
+<h2>Cert Rows</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cert.CertNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomsEntryNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HTSCodeDescript)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Results)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FDAStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfPackages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InspectionLotIdNos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CBPContainerLotID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cert.CertNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomsEntryNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HTSCodeDescript)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Results)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FDAStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitOfMeasure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumOfPackages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InspectionLotIdNos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CBPContainerLotID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,98 @@
+﻿@model CertApp.Models.CertRow
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CertRow</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cert.CertNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cert.CertNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomsEntryNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomsEntryNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HTSCodeDescript)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HTSCodeDescript)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Results)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Results)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FDAStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FDAStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitOfMeasure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOfPackages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOfPackages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectionLotIdNos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectionLotIdNos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CBPContainerLotID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CBPContainerLotID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
